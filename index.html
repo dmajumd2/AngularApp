@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title></title>
+        <script src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.5.5/angular-route.min.js"></script>
+        <script src="/app.js"></script>
+    </head>
+
+
+    <body>
+        <div ng-app="myapp">
+
+            <div>
+                <a href="#/">Login</a>
+                <a href="#/signup">Sign up</a> 
+                <a href="#/home">Home</a>
+                <a href="#/profile">Profile</a>
+                <a href="#/message">Message</a>
+            </div>
+            <div ng-view=""></div>
+
+            <div ng-controller="login">
+               
+
+            </div>
+
+            <div ng-controller="signup">
+
+
+            </div>
+
+
+        </div>
+    </body>
+
+</html>
