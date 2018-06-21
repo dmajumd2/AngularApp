@@ -1,11 +1,10 @@
 var app = angular.module('myapp', ['ngRoute']);
 
-
-
 app.config(function($routeProvider){
 
     $routeProvider.when('/',{
-        templateUrl:  '/login.html'
+        templateUrl:  '/login.html',
+        controller: 'loginCtrl'
     })
     .when('/signup',{
         templateUrl: '/signup.html'
@@ -18,20 +17,21 @@ app.config(function($routeProvider){
     })
     .when('/message',{
         templateUrl: '/message.html'
+    })
+    .otherwise({
+        redirectTo: '/'
     });
+});
 
+app.controller('loginCtrl', function($scope, $location, $rootScope){
+    $scope.submit = function(){
+        if($scope.username == "" && $scope.password == ""){
+            alert("please enter the username and password");
+        }
+    }
 });
 
 
+// app.controller('signup', function($scope){
 
-
-app.controller('login', function($scope){
-
-});
-
-
-app.controller('signup', function($scope){
-
-   
-
-});
+// });
